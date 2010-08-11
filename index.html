@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+<head>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+  <script type="text/javascript" src="mix.js"></script>
+  
+  <style>
+    .colbox { width: 10px; height: 20px; float:left;}
+  
+  </style>
+  
+  <script>
+    $(function() {
+      $('#go').click(function() {
+        $('#gradient').children().remove();
+        
+        var from = $('#from').val();
+        var to = $('#to').val();
+        
+        
+        for(var i=0;i<100;i++) {
+          $('#gradient').append(
+            $('<div></div>')
+              .addClass('colbox')
+              .css('background-color', mix.gradient(from, to, (i/100.)))
+          )
+        }
+      });
+    });
+  </script>
+  
+</head>
+<body>
+  <input id="from" type="text" value="#FFFFFF"/>
+  <input id="to" type="text" value="#000000"/>
+  <input id="go" type="button" value="go!">
+
+  <div id="gradient"></div>
+</body>
+</html>
