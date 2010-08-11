@@ -1,0 +1,4 @@
+example usage:
+
+mix.gradient('#FFFFFF', '#000', 0.5) => '#7F7F7F'
+
